@@ -1,0 +1,144 @@
+/**styles here**/
+@import "./login.scss";
+@import "./filter.scss";
+
+.main-nav:active{
+    color: chocolate;
+  }
+.main-nav-active {
+    color:#ED9218 !important;
+    font-size: 15px;
+  }
+
+#line {
+    width: 2px;
+    height: 17px;
+    margin: 4px 5px;
+    background: #f69b1f;
+} 
+.post-met{
+  display: flex;
+    margin-bottom: 25px;
+  }
+$colors:
+  #2196F3,
+  #03A9F4,
+  #00BCD4,
+  #009688,
+  #4CAF50,
+  #8BC34A,
+  #CDDC39,
+  #FFEB3B;
+
+
+.emptycart{
+  width:40%;
+  margin:0 auto;
+}
+[class^="ball-"] {
+    position: absolute;
+    display: block;
+    left: 30px;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    transition: all 0.5s;
+    animation: circleRotate 4s both infinite;
+    transform-origin: 0 250% 0;
+}
+
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% { 
+    transform: rotate(1440deg); 
+  }
+}
+
+@for $i from 1 through 8 {
+  .ball-#{$i} {
+    z-index: -#{$i};
+    background-color: nth($colors, $i);
+    animation-timing-function: cubic-bezier(0.5, 0.3 * $i, 0.9, 0.9);
+  }
+}
+
+.billingContinue{
+  position: relative;
+  top:75%;
+}
+.left-sidebar{
+  width:245px;
+}
+
+.add_wishlist {
+  border:none;
+  color:#B3AFA8;
+  background-color: white;
+  margin-top: 7px;
+}
+
+.fa-heart{
+  font-size: 20px;
+}
+.cart_quantity_delete{
+  border:none;
+  background-color: white;
+}
+button:focus {outline:0;}
+.redheart{
+color:red;
+}
+.emptywishlist{
+  font-size: 30em;
+  color: #c7c2c24d;
+  position: relative;
+  left: 32%;
+}
+.img-container{
+  background: none;
+}
+.img-preview {
+  display: none;
+  width: 500px;
+  height: 500px;
+  margin-left: 10px;
+  overflow: hidden;
+  img {
+    width: 500px;
+    height:400px;
+  }
+}
+.sidebarPadding{
+  padding: 5px;
+}
+.leftSidebarBrands a{
+  color: #696763;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.itemNotFound{
+  height:100px;
+  }
+  .itemNotFound h4{
+  display: block;
+  margin: 0 auto;
+  color: #B4B1AB;
+  padding-top:10px;
+}
+
+.addtocompare{
+  border:none;
+  }
+  .addtocompare:hover{
+  color:#f69b1f;
+  float: right;
+  }
+
+
+
+

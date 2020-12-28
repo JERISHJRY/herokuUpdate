@@ -1,0 +1,154 @@
+.loginWrapper{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 5%;
+    input{
+        background: #F0F0E9;
+        border: medium none;
+        color: #696763;
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        height: 40px;
+        margin-bottom: 10px;
+        outline: medium none;
+        padding-left: 10px;
+        width: 100%;
+    }
+    button{
+       color: white;
+       background-color: #FE980F;
+       border: unset;
+       padding: 6px 12px;
+    }
+}
+
+.ResetPasswordWrapper{
+    width: 40%;
+    margin: auto;
+    margin-bottom: 5%;
+    input{
+        background: #F0F0E9;
+        border: medium none;
+        color: #696763;
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        height: 40px;
+        margin-bottom: 10px;
+        outline: medium none;
+        padding-left: 10px;
+        width: 100%;
+    }
+    button{
+       color: white;
+       background-color: #FE980F;
+       border: unset;
+       padding: 6px 12px;
+    }
+}
+
+.signin{   
+    width: 40%;
+}
+.signup{
+    width: 40%;
+    margin-left: 5%;
+}
+.OR{
+    background: #FE980F;
+    border-radius: 40px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;    
+    line-height: 50px;
+    text-align: center;
+    width: 6%;
+    height: 6%;
+    margin: 0 auto;
+    margin-left: 5%;
+    margin-top: 50px;
+}
+
+.signUpPass{
+    width: 100%;
+    background: #F0F0E9;
+    input{
+       outline: none;
+       width: 93%;
+       float: left;
+       margin-bottom: 0px;
+    }    
+}
+
+.signUpRePass{
+    width: 100%;
+    background: #F0F0E9;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    input{
+        outline: none;
+        width: 93%;
+        float: left;
+        margin-bottom: 0px;
+    }    
+}
+
+.password-icon{
+  float: left;
+  margin-top: 15px;  
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
+
+.forgerPassword{
+    color: blue;
+    &:hover{
+        color: #FE980F ;
+        cursor: pointer;
+    }
+}
+
+.spinner {
+    margin: auto;
+    margin-top: 7%;
+    margin-bottom: 10%;
+    height: 40px;
+    width: 40px;
+    transform: translate(-50%, -50%);
+}
+
+.aln_center{
+    margin: auto;
+    width: 80%;
+    :link{
+        color: blue ;
+        &:hover{            
+            cursor: pointer;
+        } 
+    }
+}
+
+.loginResult{
+    margin-top: 3%;
+    margin-bottom: 10%;
+    ul{
+        font-size: 20px;
+    }
+}
+.center_aln{
+    text-align: center;
+}
