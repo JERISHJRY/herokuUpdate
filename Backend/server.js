@@ -28,9 +28,6 @@ const buildRoutes = require ("./buildRoutes")
  */
 const app = express();
 
-
-const product = require('./controllers/productListController');
-
 if (process.env.NODE_ENV === 'production') {
    // Serve any static files
    app.use(express.static(path.join(__dirname, '../Frontend/build')));
