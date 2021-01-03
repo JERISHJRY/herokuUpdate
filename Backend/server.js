@@ -20,6 +20,9 @@ const webPush = require('./utils/webPush');
 // Import Routes
 const routes = require('./routes');
 
+// all get request for heroku build
+const buildRoutes = require ("./buildRoutes")
+
 /**
  * Create Express server.
  */
@@ -33,11 +36,7 @@ if (process.env.NODE_ENV === 'production') {
    app.use(express.static(path.join(__dirname, '../Frontend/build')));
     
    //all get request should be written here to get rid of react router conflict
-   app.get("/product/items",product.sendProductData);
-   app.get('/product/blog',product.sendBlogData);
-   app.get('/product/:product_id',product.filteredProductById);
-   app.get('/product/priceFilter/:price',product.filteredProductByPrice);
-   app.get('/product/search/:image_name',product.filteredProductByMainSearch);
+   app.use("/",buildRoutes);
       
    // All remaining requests return the React app, so it can handle routing.
    app.get('*', function(request, response) {
