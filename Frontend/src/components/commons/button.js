@@ -7,7 +7,7 @@ const Button=(props)=>{
     const className=props.className;
    
     return(<>
-     <button className={`btn btn-default ${className}`} onClick={handleClick}>
+     <button className={`btn btn-default btnMargin ${className}`} onClick={handleClick}>
     {iconToDisplay}{buttonLabel}</button> 
                
     </>);
