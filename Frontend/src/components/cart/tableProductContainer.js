@@ -3,6 +3,7 @@ import emptyCart from 'assets/pics/images/cart/emptycart.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { RemovefromCart } from 'redux/actions/CartAction';
 import {toast} from 'react-toastify';
+import { productclick } from "components/commons/productClick";
 
 const TableProductContainer = (props) => {
     const dispatch = useDispatch();
@@ -89,7 +90,9 @@ const TableProductContainer = (props) => {
                             <>
                             <tr key={index}>
                             <td className='cart_product'>
-                            <img src={cartitem.image}  alt='image not found' /></td>
+                            <img src={cartitem.image}  alt='image not found'
+                                 onClick={() => productclick(cartitem.web_id)}
+                             /></td>
                             <td className='cart_description'>
                             <h4>{cartitem.image_name}</h4>
                             <p>{cartitem.web_id}</p>
