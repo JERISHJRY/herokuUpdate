@@ -10,6 +10,7 @@ const Features = (props) => {
   let errorStatus = props.ErrorSearch;
   let array = [];
   const content = props.data;
+  console.log(content,"contant")
   if (content) {
     content.message.forEach((e) => {
       if (e.features_item) {

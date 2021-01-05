@@ -35,10 +35,11 @@ const Apiwrapper=(props)=>{
     },[dispatch,location]);
 
       
-      console.log(products, "homePage");
+     
       const value=products?.data;
       const loaderCondition = useSelector(state=>state.productData.productLoader);
       const searchError=products?.error;
+      console.log(value, "homePage");
       
     return(<>
         {
