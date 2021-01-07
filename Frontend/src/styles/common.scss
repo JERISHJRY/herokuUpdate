@@ -2,57 +2,48 @@
 @import "./login.scss";
 @import "./filter.scss";
 
-.main-nav:active{
-    color: chocolate;
-  }
+.main-nav:active {
+  color: chocolate;
+}
 .main-nav-active {
-    color:#ED9218 !important;
-    font-size: 15px;
-  }
+  color: #ed9218 !important;
+  font-size: 15px;
+}
 
 #line {
-    width: 2px;
-    height: 17px;
-    margin: 4px 5px;
-    background: #f69b1f;
-} 
-.post-met{
+  width: 2px;
+  height: 17px;
+  margin: 4px 5px;
+  background: #f69b1f;
+}
+.post-met {
   display: flex;
-    margin-bottom: 25px;
-  }
-$colors:
-  #2196F3,
-  #03A9F4,
-  #00BCD4,
-  #009688,
-  #4CAF50,
-  #8BC34A,
-  #CDDC39,
-  #FFEB3B;
+  margin-bottom: 25px;
+}
+$colors: #2196f3, #03a9f4, #00bcd4, #009688, #4caf50, #8bc34a, #cddc39, #ffeb3b;
 
-
-.emptycart{
-  width:40%;
-  margin:0 auto;
+.emptycart {
+  width: 40%;
+  margin: 0 auto;
 }
 [class^="ball-"] {
-    position: absolute;
-    display: block;
-    left: 30px;
-    width: 12px;
-    height: 12px;
-    border-radius: 6px;
-    transition: all 0.5s;
-    animation: circleRotate 4s both infinite;
-    transform-origin: 0 250% 0;
+  position: absolute;
+  display: block;
+  left: 30px;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  transition: all 0.5s;
+  animation: circleRotate 4s both infinite;
+  transform-origin: 0 250% 0;
 }
 
 @keyframes circleRotate {
   0% {
     transform: rotate(0deg);
   }
-  100% { 
-    transform: rotate(1440deg); 
+  100% {
+    transform: rotate(1440deg);
   }
 }
 
@@ -64,40 +55,43 @@ $colors:
   }
 }
 
-.billingContinue{
+.billingContinue {
   position: relative;
-  top:75%;
+  top: 75%;
 }
-.left-sidebar{
-  width:245px;
+.left-sidebar {
+  width: 245px;
 }
 
 .add_wishlist {
-  border:none;
-  color:#B3AFA8;
+  border: none;
+  color: #b3afa8;
   background-color: white;
   margin-top: 7px;
 }
 
-.fa-heart{
+.fa-heart {
   font-size: 20px;
 }
-.cart_quantity_delete{
-  border:none;
+.cart_quantity_delete {
+  border: none;
   background-color: white;
 }
-button:focus {outline:0;}
-.redheart{
-color:red;
+button:focus {
+  outline: 0;
 }
-.emptywishlist{
+.redheart {
+  color: red;
+}
+.emptywishlist {
   font-size: 30em;
   color: #c7c2c24d;
   position: relative;
   left: 32%;
 }
-.img-container{
+.img-container {
   background: none;
+  z-index: 2;
 }
 .img-preview {
   display: none;
@@ -107,28 +101,31 @@ color:red;
   overflow: hidden;
   img {
     width: 500px;
-    height:400px;
+    height: 400px;
   }
 }
-.sidebarPadding{
+.sidebarPadding {
   padding: 5px;
 }
-.leftSidebarBrands a{
+.leftSidebarBrands a {
   color: #696763;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-.itemNotFound{
-  height:100px;
-  }
-  .itemNotFound h4{
+.itemNotFound {
+  height: 100px;
+}
+.itemNotFound h4 {
   display: block;
   margin: 0 auto;
-  color: #B4B1AB;
-  padding-top:10px;
+  color: #b4b1ab;
+  padding-top: 10px;
+}
+.btnMargin {
+  margin: -5px 6px;
 }
 
 .addtocompare{
@@ -138,8 +135,96 @@ color:red;
   color:#f69b1f;
   float: right;
   }
-  .btnMargin {
-    margin: -5px 6px;
-  }
+  .sticky {
 
+     
+      background-color:#ed9218;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width:250px;
+      margin-left:1065px;
+      z-index: 9999;
+      border:1px solid#ed9218;
+      border-radius: 5px;
+  
+  }
+  .payable{
+    width: 250px;
+    padding:5px;
+  
+  }
+  .payable h5{
+    color: #fff;
+  }
+  .fa-angle-up{
+    font-size: 20px;
+    color: #fff;
+    border: none;
+  }
+  .fa-angle-down{
+    font-size: 20px;
+    color: #fff;
+    border: none;
+  }
+  .paybutton{
+    border: none;
+    border-radius: 3px;
+    font-size: 11px;
+    padding:3px;
+    color:#ed9218;
+  }
+  .arrowButton{
+    border:none;
+    background-color:#ed9218; 
+    
+  }
+#zIndex {
+  z-index: 1;
+}
+
+  .ScrollStyle{
+    max-height: 180px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+  }
+  .confirmButton{
+    border:none;
+    padding:3px;
+    border-radius:2px;
+    color:#FFF;
+    background-color:#ed9218;
+  }
+  .orderTable{
+    height: 400px;
+     width: 100%;
+     font-size: 20px;
+  }
+  .MuiDataGrid-root .MuiDataGrid-cellLeft {
+    text-align: left;
+    font-size: 14px;
+}
+.MuiDataGrid-root .MuiDataGrid-colCellTitle {
+  overflow: hidden;
+  font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 16px;
+}
+.text-color{
+  color:#ed9218;
+} 
+  .offerbadge{
+    height: 25px;
+    width: 55px;
+    background-color:#f69b1f;;
+    position: absolute;
+    right: 0px;
+    border-radius: 20px;
+    color:white;
+    padding:3px;
+  }
+  .couponText{
+    width:56px;
+  }
 

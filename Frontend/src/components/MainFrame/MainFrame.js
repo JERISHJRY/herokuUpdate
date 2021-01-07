@@ -1,6 +1,6 @@
 /**react dependencies */
 import React, { useEffect, useState } from "react";
-import { AuthorizedRoutes, UnAuthorizedRoutes,AllRoutes } from "./routes";
+import { AuthorizedRoutes, UnAuthorizedRoutes, AllRoutes } from "./routes";
 // import { useLocation } from "react-router-dom";
 
 const App = () => {

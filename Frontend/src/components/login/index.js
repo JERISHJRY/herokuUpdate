@@ -10,7 +10,6 @@ const LoginWrapper = (props) => {
   useEffect(() => {
     dispatch(makeResponseEmpty());
   }, []);
-  
 
   return (
     <div className="loginWrapper">

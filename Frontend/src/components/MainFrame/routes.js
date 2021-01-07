@@ -12,7 +12,7 @@ import Productdetail from "components/productDetails/index";
 import Checkout from "components/checkout/index";
 import WishList from "components/wishlist/wishlist";
 import NotFound from "components/404";
-
+import Orders from '../orders/orders';
 const AuthorizedRoutes = () => {
   return (
     <Switch>
@@ -161,7 +161,14 @@ const AllRoutes = () => {
         render={(props) => (
           <Layout renderingComponent={<WishList {...props} />} />
         )}
-      />      
+      />
+       <Route
+        exact
+        path={`/orders`}
+        render={(props) => (
+          <Layout renderingComponent={<Orders {...props} />} />
+        )}
+      />
       <Route exact path={`/404`} render={(props) => <NotFound {...props} />} />
       <Redirect from={"/"} to={"/home"} />
       <Redirect to={"/404"} />
@@ -169,4 +176,4 @@ const AllRoutes = () => {
   );
 };
 
-export { AuthorizedRoutes, UnAuthorizedRoutes,AllRoutes };
+export { AuthorizedRoutes, UnAuthorizedRoutes, AllRoutes };

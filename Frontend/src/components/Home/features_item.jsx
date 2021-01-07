@@ -5,12 +5,12 @@ import AddWishlistButton from "../Home/addWishlistButton";
 import { productclick } from "components/commons/productClick";
 import { Loader } from "components/commons/loader";
 import { toast } from "react-toastify";
+import {offer} from 'components/commons/offerCalculation';
 
 const Features = (props) => {
   let errorStatus = props.ErrorSearch;
   let array = [];
   const content = props.data;
-  console.log(content,"contant")
   if (content) {
     content.message.forEach((e) => {
       if (e.features_item) {
@@ -46,46 +46,46 @@ const Features = (props) => {
                         <div className="single-products">
                           <div className="productinfo text-center">
                             <div className="proImageDiv">
+                              {it.discount?
+                              <span className="offerbadge">{it.discount}% off</span>:null}
                               <img
                                 src={it.image}
                                 onClick={() => productclick(it.web_id)}
                                 alt=""
                               />
                             </div>
-                            <h2>
-                              <span>{it.currency_type}</span>
-                              {it.price}
-                            </h2>
                             <p>{it.image_name}</p>
-                          </div>
-                          <div className="product-overlay">
-                            <div className="overlay-content">
-                              <h2
-                                style={{ cursor: "pointer" }}
-                                onClick={() => productclick(it.web_id)}
-                              >
-                                Details
-                              </h2>
-                              <h2>
-                                <span>{it.currency_type}</span>
-                                {it.price}
-                              </h2>
-                              <p>{it.image_name}</p>
-                              <CartButton item={it} />
+                            <div className="priceContainer">
+                              {it.discount ? (
+                                <>
+                                  <span className="priceDetail">
+                                    <span>{it.currency_type}</span>
+                                    {offer( it.price,it.discount) }
+                                  </span>
+                                  <span className="originalPrice">
+                                    <strike>
+                                      <span>{it.currency_type}</span>
+                                      {it.price}
+                                    </strike>
+                                  </span>
+                                  {/* <span className="offer"></span> */}
+                                </>
+                              ) : (
+                                <>
+                                  <span className="priceDetail">
+                                    <span>{it.currency_type}</span>
+                                    {it.price}
+                                  </span>
+                                </>
+                              )}
                             </div>
+                            <CartButton item={it} />
                           </div>
                         </div>
-                        <div className="choose">
+                        <div className="choose text-center">
                           <ul className="nav ml-3">
                             <li>
                               <AddWishlistButton product={it} />
-                            </li>
-                            <li className="ml-3">
-                              {" "}
-                              <button onClick={Toast} className="addtocompare">
-                                <i className="fa fa-plus-square"></i>
-                                Add to compare
-                              </button>
                             </li>
                           </ul>
                         </div>

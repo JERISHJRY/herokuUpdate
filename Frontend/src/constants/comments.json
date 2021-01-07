@@ -1,12 +1,11 @@
 [
-    {   
-        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFkn8iz20uBVCl6M8yk5XptfDT5Ayo5FwnrQ&usqp=CAU",
-        
-         "user":"azx",
-         "id":"1",
-        "time":"01.20",
-        "date":"DEC 5, 2013",
-        "comment":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol"
+  {
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFkn8iz20uBVCl6M8yk5XptfDT5Ayo5FwnrQ&usqp=CAU",
 
-    }
+    "user": "azx",
+    "id": "1",
+    "time": "01.20",
+    "date": "DEC 5, 2013",
+    "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol"
+  }
 ]

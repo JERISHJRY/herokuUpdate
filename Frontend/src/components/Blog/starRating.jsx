@@ -1,6 +1,6 @@
-import React,{useState} from 'react';
-import Rating from '@material-ui/lab/Rating';
-import Box from '@material-ui/core/Box';
+import React, { useState } from "react";
+import Rating from "@material-ui/lab/Rating";
+import Box from "@material-ui/core/Box";
 
 export default function StarRating() {
   const [value, setValue] = useState(5);
@@ -10,7 +10,7 @@ export default function StarRating() {
         <Rating
           name="simple-controlled"
           value={value}
-          onChange={( newValue) => {
+          onChange={(newValue) => {
             setValue(newValue);
           }}
         />

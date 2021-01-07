@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import {useDispatch} from 'react-redux';
-import {loginHandler} from "services/loginApi"
-import *as rejex from "components/commons/commonRegex";
+import { useDispatch } from "react-redux";
+import { loginHandler } from "services/loginApi";
+import * as rejex from "components/commons/commonRegex";
 
 const Signup = (props) => {
   const { register, handleSubmit, errors } = useForm();
@@ -11,23 +11,21 @@ const Signup = (props) => {
   const [isPasswordShown, setPassVisibility] = useState(false);
   const dispatch = useDispatch();
 
-  const onSubmit = data => {
-      if(data.password === data.rePassword){
-        delete data["rePassword"];
-        dispatch(loginHandler("post","/user/signup",data));
-        props.history.push("/Login_Status")   
-      }
-      //checking password and re-entered password are same
-      else{
-        setPasswordStatus(
-            <span>Both password did not match</span>
-          )
-      }
-    };
-  
+  const onSubmit = (data) => {
+    if (data.password === data.rePassword) {
+      delete data["rePassword"];
+      dispatch(loginHandler("post", `${process.env.REACT_APP_BASE_URL}/user/signup`, data));
+      props.history.push("/Login_Status");
+    }
+    //checking password and re-entered password are same
+    else {
+      setPasswordStatus(<span>Both password did not match</span>);
+    }
+  };
+
   return (
     <React.Fragment>
-      <form onSubmit={handleSubmit(onSubmit)} >
+      <form onSubmit={handleSubmit(onSubmit)}>
         <h3>New User Signup!</h3>
         <input
           name="firstName"
@@ -35,7 +33,9 @@ const Signup = (props) => {
           required
           ref={register(rejex.firstNameRejexPattern)}
         />
-        {errors.firstName && <span>Name length should between 3 to 20 characters</span>}
+        {errors.firstName && (
+          <span>Name length should between 3 to 20 characters</span>
+        )}
 
         <input
           name="lastName"
@@ -62,9 +62,10 @@ const Signup = (props) => {
             type={isPasswordShown ? "text" : "password"}
             required
             ref={register(rejex.passwordRejexPattern)}
-          /><i
+          />
+          <i
             className="fa pass fa-eye password-icon"
-            onClick={() => setPassVisibility(!(isPasswordShown))}
+            onClick={() => setPassVisibility(!isPasswordShown)}
           />
         </div>
         {errors.password && <span>atleast 8 characters needed</span>}
@@ -78,20 +79,22 @@ const Signup = (props) => {
               required: true,
               pattern: {
                 value: /^[A-Z0-9._%+-]/i,
-              }
+              },
             })}
-          /><i
+          />
+          <i
             className="fa fa-eye password-icon"
-            onClick={() => setVisibility(!(isRePasswordShown))}
+            onClick={() => setVisibility(!isRePasswordShown)}
           />
         </div>
         {errors.rePassword && <span>This field is required</span>}
-        {passwordCheck}<br />
+        {passwordCheck}
+        <br />
         <div className="clear"></div>
-        <button type="submit" >Signup</button>
+        <button type="submit">Signup</button>
       </form>
     </React.Fragment>
   );
-}
+};
 
 export default Signup;

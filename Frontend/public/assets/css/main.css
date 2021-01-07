@@ -256,15 +256,15 @@ a#scrollUp i{
   border: medium none;
   color: #B2B2B2;
   font-family: 'roboto';
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 300;
   height: 35px;
   outline: medium none;
   padding-left: 10px;
-  width: 155px;
+  width: 264px;
   background-image: url(../images/home/searchicon.png);
   background-repeat: no-repeat;
-  background-position: 130px;
+  background-position: 235px;
 }
 
 
@@ -598,8 +598,9 @@ ul.sub-menu {
 .item h1 {
   color: #B4B1AB;
   font-family: abel;
-  font-size: 48px;
-  margin-top: 115px;
+  font-size: 35px;
+  margin-top: 50px;
+ 
 }
 
 .item h1 span {
@@ -609,7 +610,7 @@ ul.sub-menu {
 .item h2 {
   color: #363432;
   font-family: 'Roboto', sans-serif;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 22px;
   margin-top: 10px;
@@ -617,7 +618,7 @@ ul.sub-menu {
 
 .item  p {
 	color:#363432;
-	font-size:16px;
+	font-size:14px;
 	font-weight:300;
 	font-family: 'Roboto', sans-serif;
 }
@@ -860,12 +861,48 @@ h2.title {
   top: 0;
   right: 0;
 }
-
-.productinfo h2{
+.priceContainer {
+  margin-bottom: 15px;
+}
+.priceDetail{
 	color: #FE980F;
 	font-family: 'Roboto', sans-serif;
-	font-size: 24px;
-	font-weight: 700;
+	font-size: 16px;
+  font-weight: 500;
+  padding: 0 5px;
+}
+.originalPrice {
+  color: #ecb56d;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+  font-weight: 500;
+  padding: 0 5px;
+}
+.offer {
+  color: green;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0 5px;
+}
+.priceDetailProduct{
+	color: #FE980F;
+	font-family: 'Roboto', sans-serif;
+	font-size: 26px;
+  font-weight: 500;
+  padding: 0 5px;
+}
+.originalPriceProduct {
+  color: #ecb56d;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+  font-weight: 500;
+  padding: 0 5px;
+}
+.offerProduct {
+  color: green;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 0 5px;
 }
 .product-overlay h2{
 	color: #fff;
@@ -877,7 +914,8 @@ h2.title {
 
 .productinfo p{
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  margin: 12px 0;
+  font-size: 16px;
   font-weight: 400;
   color: #696763;
 }
@@ -886,6 +924,7 @@ h2.title {
   width: 200px;
   object-fit: contain;
   height: 150px;
+  cursor: pointer;
 }
 .productinfo{
  position:relative;
@@ -900,7 +939,6 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-
 }
 
 .single-products:hover .product-overlay {
@@ -1220,14 +1258,12 @@ h2.title {
 }
 
 .product-information {
-  width: 103%;
   border: 1px solid #F7F7F0;
   overflow: hidden;
   padding-bottom: 60px;
   padding-left: 60px;
   padding-top: 60px;
   position: relative;
- 
 }
 
 .newarrival{
@@ -1640,6 +1676,7 @@ h2.title {
   width: 200px;
   height: 250px;
   object-fit: contain;
+  cursor: pointer;
 }
 .cart_quantity_button a {
   background:#F0F0E9;
