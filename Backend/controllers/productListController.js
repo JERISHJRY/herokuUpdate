@@ -7,8 +7,8 @@ const str = JSON.stringify(obj);
 const obj2 = JSON.parse(str);
 const data = [obj2[0], obj2[1], obj2[2]];
 
-const allData1 = [...data[0].features_item, ...data[1].reccomended_item];
-const allData2 = [...data[2].shoping_item[0].T_SHIRT, ...data[2].shoping_item[1].BLAZERS, ...data[2].shoping_item[2].SUNGLASS, ...data[2].shoping_item[3].KIDS, ...data[2].shoping_item[4].POLO_SHIRTS];
+const allData1 = [...data[0].features_item, ...data[1].offer_item];
+const allData2 = [...data[2].shoping_item[0].VEGETABLES, ...data[2].shoping_item[1].FRUITS, ...data[2].shoping_item[2].STATIONERY, ...data[2].shoping_item[3].FISH, ...data[2].shoping_item[4].POULTRY_AND_MEATS, ...data[2].shoping_item[5].ORGANIC_PRODUCTS];
 const allData = [...allData1, ...allData2];
 
 // send all product details
@@ -98,13 +98,13 @@ const sendFilteredItems = (req, res, next) => {
 
 const filteredProductByMainSearch = (req, res, next) => {
   let imageName = req.params.image_name;
-    imageName = imageName.substring(1).toUpperCase();
+  imageName = imageName.substring(1).toUpperCase();
   const filteredData = [];
   allData.forEach((e) => {
     if (e.image_name.toUpperCase().includes(imageName)) {
       filteredData.push(e);
     }
-  }); 
+  });
   const responseArray = data;
   responseArray[0].features_item = filteredData;
   if (filteredData.length) {
