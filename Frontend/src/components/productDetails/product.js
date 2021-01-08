@@ -95,7 +95,7 @@ const Product = (props) => {
                   <b>Condition:</b> New
                 </p>
                 <p>
-                  <b>Brand:</b> E-SHOPPER
+                  <b>Brand:</b> {element.brand}
                 </p>
                 <a href="">
                   <img
