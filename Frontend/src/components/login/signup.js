@@ -14,7 +14,7 @@ const Signup = (props) => {
   const onSubmit = (data) => {
     if (data.password === data.rePassword) {
       delete data["rePassword"];
-      dispatch(loginHandler("post", `${process.env.REACT_APP_BASE_URL}/user/signup`, data));
+      dispatch(loginHandler("post", `/user/signup`, data));
       props.history.push("/Login_Status");
     }
     //checking password and re-entered password are same
