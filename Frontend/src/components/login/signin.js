@@ -15,7 +15,7 @@ const Signin = (props) => {
   const [backToLogin, setBackToLogin] = useState(false);
 
   const onSubmit = (data) => {
-    dispatch(loginHandler("post", `${process.env.REACT_APP_BASE_URL}/user/signin`, data));
+    dispatch(loginHandler("post", `/user/signin`, data));
     props.history.push("/Login_Status");
   };
 
