@@ -6,6 +6,7 @@ import WishlistReducer from "./wishListReducer";
 import { Productreducer } from "./productreducer";
 import { loginReducer } from "./LoginReducer";
 import CartSubTotalReducer from "./cartSubTotalReducer";
+import { addressReducer } from "./addressReducer";
 import OrderReducer from "./OrderReducer";
 
 export default combineReducers({
@@ -16,5 +17,6 @@ export default combineReducers({
   loginResult: loginReducer,
   blog: BlogReducer,
   homeProduct: HomeProductReducer,
+  address : addressReducer,
   order:OrderReducer
 });
