@@ -1,44 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as rejex from "components/commons/commonRegex";
-import csc from "country-state-city";
 import { toast } from "react-toastify";
-import GoogleMap from "./googleMap2";
+import Map from "./leaflet";
+import { useSelector } from "react-redux"
 
 const BillingAddressForm = (props) => {
   const { register, handleSubmit, errors } = useForm();
-  const [checked, setChecked] = useState(true);
-  const [countriesList, setCountrylist] = useState([]);
-  const [stateList, setStatelist] = useState([]);
-  const [stateDisable, setDisable] = useState(true);
+  const address = useSelector((state) => state.address);
+  const [state, setState] = useState();
+  const [country, setCountry] = useState();
+  const [ZipCode, setZip] = useState();
+  const [city, setCity] = useState();
+  const [district, setDistrict] = useState();
 
+  
   useEffect(() => {
-    let countries = csc.getAllCountries();
-    setCountrylist(countries);
-  }, []);
+    if(Object.keys(address).length){
+      console.log(address,"address");
+      setCountry(address.CountryCode);
+      setState(address.Region);
+      setZip(address.Postal);
+      setCity(address.City);
+      setDistrict(address.Subregion);
+    }
+  }, [address]);
 
-  const handleCountry = (event) => {
-    let country = event.target.value;
-    let temp = countriesList.filter((count) => count.name === country);
-    const id = temp[0].id;
-    let statesList = csc.getStatesOfCountry(id);
-    setStatelist(statesList);
-    setDisable(false);
-  };
+  
 
   const onSubmit = (data) => {
-    console.log(data, "onsubmit");
-    if (checked) {
-      // const billingAddress = data;
+    console.log(data, "onsubmit");    
       toast("continue_shopping", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: true,
-      });
-    }
+      });   
   };
   return (
-    <>
+    <div id="formDiv">
       {" "}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="col-sm-5 clearfix">
@@ -93,21 +92,22 @@ const BillingAddressForm = (props) => {
                 />
                 <input
                   type="text"
-                  name="addr1"
-                  placeholder="Address 1 *"
+                  value ={city}
+                  name="city"
+                  placeholder = "City"
+                  onChange={e=>(setCity(e.target.value))}
                   ref={register({
                     required: true,
-                    minLength: 3,
-                    maxLength: 30,
                   })}
                 />
                 <input
                   type="text"
-                  placeholder="Address 2"
-                  name="addr2"
+                  value ={district}
+                  name="district"
+                  placeholder = "District"
+                  onChange={e=>(setDistrict(e.target.value))}
                   ref={register({
-                    minLength: 3,
-                    maxLength: 30,
+                    required: true,
                   })}
                 />
               </form>
@@ -115,23 +115,35 @@ const BillingAddressForm = (props) => {
             <div className="form-two">
               <form>
                 <input
-                  name="zip"
                   type="text"
-                  placeholder="Zip / Postal Code *"
-                  ref={register({ required: true })}
+                  value ={ZipCode}
+                  name="Zip"
+                  placeholder = "Zip code"
+                  onChange={e=>(setZip(e.target.value))}
+                  ref={register({
+                    required: true,
+                  })}
                 />
-                <select onChange={handleCountry}>
-                  <option>-- Country --</option>
-                  {countriesList.map((count, i) => (
-                    <option key={i}>{count.name}</option>
-                  ))}
-                </select>
-                <select disabled={stateDisable}>
-                  <option>-- State / Province / Region -- </option>
-                  {stateList.map((state, i) => (
-                    <option key={i}>{state.name}</option>
-                  ))}
-                </select>
+                <input
+                  type="text"
+                  value ={country}
+                  name="Country"
+                  placeholder = "Country"
+                  onChange={e=>(setCountry(e.target.value))}
+                  ref={register({
+                    required: true,
+                  })}
+                />
+                <input
+                  type="text"
+                  value ={state}
+                  name="State"
+                  placeholder = "State"
+                  onChange={e=>(setState(e.target.value))}
+                  ref={register({
+                    required: true,
+                  })}
+                />                
                 <input
                   type="password"
                   placeholder="Confirm password"
@@ -145,7 +157,7 @@ const BillingAddressForm = (props) => {
                     required: true,
                     minLength: 3,
                     maxLength: 20,
-                    pattern: /^[0]?[789]\d{9}$/,
+                    
                   })}
                 />
                 {errors.email && <span>Enter valid Phone number</span>}
@@ -157,7 +169,7 @@ const BillingAddressForm = (props) => {
                   ref={register({
                     minLength: 3,
                     maxLength: 20,
-                    pattern: /^[0]?[789]\d{9}$/,
+                    
                   })}
                 />
                 <input name="fax" type="text" placeholder="Fax" />
@@ -170,11 +182,10 @@ const BillingAddressForm = (props) => {
               </form>
             </div>
           </div>
-        </div>
-        
-        <GoogleMap />        
+        </div>    
       </form>
-    </>
+      <Map />  
+    </div>
   );
 };
 export default BillingAddressForm;

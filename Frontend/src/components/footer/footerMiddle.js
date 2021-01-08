@@ -1,4 +1,5 @@
 import React from "react";
+import { filter } from "components/commons/filter";
 
 const Middlefooter = () => {
   return (
@@ -48,20 +49,27 @@ const Quick = () => {
       <div className="single-widget">
         <h2>Quick Shop</h2>
         <ul className="nav navbar-nav nav-stacked">
-          <li>
-            <a href="">T-Shirt</a>
-          </li>
-          <li>
-            <a href="">Mens</a>
-          </li>
-          <li>
-            <a href="">Womens</a>
-          </li>
+        <li style={{cursor:"pointer"}}
+          onClick={() => filter({ brand: "meatworld" })}
+        >
+          Meat
+        </li>
+        <li style={{cursor:"pointer"}}
+            onClick={() => filter({ brand: "freshfish" })}
+        >
+        Fish{" "}
+        </li>
+        <li
+          style={{cursor:"pointer"}}
+          onClick={() => filter({ brand: "chickenzone" })}
+        >
+          chicken{" "}
+        </li>
           <li>
             <a href="">Gift Cards</a>
           </li>
           <li>
-            <a href="">Shoes</a>
+            <a href="">Vegetables</a>
           </li>
         </ul>
       </div>
