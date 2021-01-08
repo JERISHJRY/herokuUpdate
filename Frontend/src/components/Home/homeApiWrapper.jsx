@@ -18,7 +18,7 @@ console.log(process.env,'env');
       dispatch(
         Server(
           "get",
-          `${process.env.REACT_APP_BASE_URL}/product/items`,
+          `/product/items`,
           null,
           actionType.PRODUCT_GET
         )
