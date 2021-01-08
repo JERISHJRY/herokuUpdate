@@ -18,7 +18,7 @@ const ProductDatas = (props) => {
     dispatch(
       Server(
         "get",
-        `/product/:${id}`,
+        `${process.env.REACT_APP_BASE_URL}/product/:${id}`,
         null,
         actionType.PRODUCT
       )

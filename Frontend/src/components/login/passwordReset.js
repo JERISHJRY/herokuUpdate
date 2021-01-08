@@ -19,7 +19,7 @@ const ResetPassword = (props) => {
       delete data["token"];
       dispatch(
         passwordResetHandler(
-          `/user/reset-password`,
+          `${process.env.REACT_APP_BASE_URL}/user/reset-password`,
           data,
           token
         )

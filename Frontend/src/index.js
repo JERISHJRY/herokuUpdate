@@ -16,6 +16,11 @@ import "./styles/common.scss";
 import 'three-dots/dist/three-dots.min.css'
 import 'react-toastify/dist/ReactToastify.css';
 
+import "leaflet/dist/leaflet.css";
+import "esri-leaflet-geocoder/dist/esri-leaflet-geocoder.css";
+import "leaflet/dist/leaflet.js";
+import "esri-leaflet-geocoder/dist/esri-leaflet-geocoder.js";
+
 // import * as serviceWorker  from "./serviceWorker";
 
 ReactDOM.render(

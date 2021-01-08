@@ -18,7 +18,7 @@ console.log(process.env,'env');
       dispatch(
         Server(
           "get",
-          `/product/items`,
+          `${process.env.REACT_APP_BASE_URL}/product/items`,
           null,
           actionType.PRODUCT_GET
         )
@@ -31,7 +31,7 @@ console.log(process.env,'env');
         dispatch(
           Server(
             "get",
-            `/product/priceFilter/:${price}`,
+            `${process.env.REACT_APP_BASE_URL}/product/priceFilter/:${price}`,
             null,
             actionType.PRODUCT_GET
           )
@@ -41,7 +41,7 @@ console.log(process.env,'env');
         dispatch(
           Server(
             "get",
-            `/product/search/:${searchValue}`,
+            `${process.env.REACT_APP_BASE_URL}/product/search/:${searchValue}`,
             null,
             actionType.PRODUCT_GET
           )
@@ -50,7 +50,7 @@ console.log(process.env,'env');
         dispatch(
           Server(
             "post",
-            `/product/filterProduct`,
+            `${process.env.REACT_APP_BASE_URL}/product/filterProduct`,
             payload,
             actionType.PRODUCT_GET
           )
