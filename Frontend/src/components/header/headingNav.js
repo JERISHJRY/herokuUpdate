@@ -5,7 +5,7 @@ import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 const BottomNav = () => {
   return (
-    <div className="header-bottom bottom_header_styling">
+    <div className="header-bottom">
       <Layout Component={<Bottom />} />
     </div>
   );

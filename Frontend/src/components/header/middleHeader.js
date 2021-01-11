@@ -78,10 +78,11 @@ const Middleheader = (props) => {
                     >
                       <i className="fa fa-lock"></i> Login
                     </NavLink>
+                    
                   </li>
                 )}
               </ul>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
@@ -90,6 +91,7 @@ const Middleheader = (props) => {
         : null
       }      
       </div>
+      <BlogContentHandler/>
     </div>
   );
 };

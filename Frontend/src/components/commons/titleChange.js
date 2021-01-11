@@ -20,7 +20,7 @@ export const  Title=(props)=> {
         },
         {
             name: 'keyword',
-            content: keyword?keyword+'E-shopper, Amazon ,vegetable,organic,fruit,Groceries,House holds,Bakery and beverages,Health and beauty,Stationery,Fish, chicken and meat,':'E-shopper, Amazon ,vegetable,organic,fruit,Groceries,House holds,Bakery and beverages,Health and beauty,Stationery,Fish, chicken and meat,',
+            content: keyword?keyword+'E-shopper,e-shop_by/vj, Amazon ,vegetable,organic,fruit,Groceries,House holds,Bakery and beverages,Health and beauty,Stationery,Fish, chicken and meat,':'E-shopper,e-shop_by/vj, Amazon ,vegetable,organic,fruit,Groceries,House holds,Bakery and beverages,Health and beauty,Stationery,Fish, chicken and meat,',
           },
 		]}
     />

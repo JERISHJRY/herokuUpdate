@@ -32,11 +32,11 @@ const Features = (props) => {
       <div className="features_items">
         <h2 className="title text-center">Features Items</h2>
         {errorStatus === true ? (
-          <div className="text-center itemNotFound">
+          <div className="text-center itemNotFound col-sm-12">
             <h4> Item Not Found</h4>
           </div>
         ) : (
-          <>
+          <div>
             {array.length ? (
               <>
                 {array.map((item) =>
@@ -51,7 +51,7 @@ const Features = (props) => {
                               <img
                                 src={it.image}
                                 onClick={() => productclick(it.web_id)}
-                                alt=""
+                                alt="image"
                               />
                             </div>
                             <p>{it.image_name}</p>
@@ -97,7 +97,7 @@ const Features = (props) => {
             ) : (
               Loader
             )}
-          </>
+          </div>
         )}
       </div>
     </>
