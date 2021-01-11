@@ -2,6 +2,7 @@
 @import "./login.scss";
 @import "./filter.scss";
 @import "./map.scss";
+@import "./cartHover.scss";
 
 .main-nav:active {
   color: chocolate;
@@ -228,4 +229,19 @@ button:focus {
   .couponText{
     width:56px;
   }
-
+.mid_bottom_header_styling{
+  overflow: hidden;
+  transition: 0.2s;
+  position: fixed;
+  background-color:white;
+  width: 100%;
+  z-index:99;
+  top:0px;
+}
+.mainRenderComponent{
+  margin-top: 150px;
+}
+.header_top{
+  width:100%;
+  z-index: 1;
+}

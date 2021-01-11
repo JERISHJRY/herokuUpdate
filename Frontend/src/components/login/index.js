@@ -3,6 +3,7 @@ import Signin from "./signin";
 import Signup from "./signup";
 import { useDispatch } from "react-redux";
 import { makeResponseEmpty } from "redux/actions/loginActions";
+import {Title} from 'components/commons/titleChange';
 
 const LoginWrapper = (props) => {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ const LoginWrapper = (props) => {
 
   return (
     <div className="loginWrapper">
+      <Title title={'Login'}/>
       <div className="signin left">
         <Signin {...props} />
       </div>

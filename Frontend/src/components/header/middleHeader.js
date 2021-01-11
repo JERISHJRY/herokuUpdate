@@ -1,18 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { useSelector } from "react-redux";
 import logo from "assets/pics/images/home/logo.png";
 import BlogContentHandler from "components/Blog/blogContentHandler";
 import history from "components/history";
+import Cart_Hover from "./cartHover";
 import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 
 const Middleheader = (props) => {
   const token = localStorage.getItem("userToken");
+  const [isHovering, setHoverStatus] = useState(false);
+  let timeOut;
+
+  const hideCartProducts = (val) =>{
+    setHoverStatus(val);
+  }
+
+  const setHoverTimeOut =()=>{ 
+    timeOut = setTimeout(()=>{
+      setHoverStatus(false);
+    },2000)
+  }
+
+  const clearHoverTimeOut =()=>{
+    clearTimeout(timeOut);
+  }
+
   const removeToken = () => {
     localStorage.removeItem("userToken");
   };
+
   const cartResult = useSelector((state) => state.cart);
   return (
-    <div className="header-middle">
+    <div className="header-middle middle_header_styling">
       <div className="container">
         <div className="row">
           <Righthead />
@@ -35,9 +54,9 @@ const Middleheader = (props) => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink exact to="/cart">
+                  <NavLink onMouseEnter={()=>setHoverStatus(true)} onMouseLeave={()=>setHoverTimeOut()} exact to="/cart">
                     <i className="fa fa-shopping-cart"></i>
-                    <label>{cartResult.addtocart.length}</label> Cart
+                    <label >{cartResult.addtocart.length}</label> Cart
                   </NavLink>
                 </li>
                 {token ? (
@@ -65,6 +84,11 @@ const Middleheader = (props) => {
             </div>
           </div>
         </div>
+      </div>
+      <div>{
+        isHovering ? <Cart_Hover hide_item={hideCartProducts} clear={clearHoverTimeOut}/>
+        : null
+      }      
       </div>
     </div>
   );

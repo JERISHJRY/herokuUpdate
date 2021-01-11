@@ -1,10 +1,12 @@
 import React from "react";
 import Topfooter from "components/footer/footerTop";
 import Middlefooter from "components/footer/footerMiddle";
+import InfoTopFooter from "components/footer/infoTopFooter";
 
 const Footer = () => {
   return (
     <footer id="footer">
+      <InfoTopFooter/>
       <Topfooter />
       <Middlefooter />
       <div className="footer-bottom">

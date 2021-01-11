@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "components/commons/button";
+import {Title} from 'components/commons/titleChange';
 
 const Tabsection = (props) => {
   return (

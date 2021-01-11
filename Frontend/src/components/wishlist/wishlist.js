@@ -5,6 +5,7 @@ import CartButton from "../commons/addToCartButton";
 import { RemoveFromWishlist } from "redux/actions/wishlistAction";
 import { productclick } from "components/commons/productClick";
 import {offer} from 'components/commons/offerCalculation';
+import {Title} from 'components/commons/titleChange';
 
 const WishList = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ const WishList = () => {
   };
   return (
     <>
+      <Title title={'WishList'}/>
       <div className="container ">
         <div className="row mt-5">
           <div className="col-sm-3">

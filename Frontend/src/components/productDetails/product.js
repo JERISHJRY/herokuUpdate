@@ -9,6 +9,7 @@ import "cropperjs/dist/cropper.min.css";
 import { GlassMagnifier } from "react-image-magnifiers";
 import { offer } from "components/commons/offerCalculation";
 import ReactImageMagnify from 'react-image-magnify';
+import {Title} from 'components/commons/titleChange';
 
 const Product = (props) => {
   const [quantity, setQuantity] = useState(1);
@@ -18,6 +19,7 @@ const Product = (props) => {
       {data.map((element, i) => (
         <>
           <div className="product-details" key={element.web_id}>
+            <Title title={element.image_name} description={element.detail.message} keyword={[element.image_name,element.type,element.brand]}/>
             <div className="col-sm-5" id='zIndex'>
               <div className="view-product">
                 <div class="img-container">

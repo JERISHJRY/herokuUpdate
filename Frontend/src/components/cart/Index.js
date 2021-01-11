@@ -3,12 +3,13 @@ import { useSelector } from "react-redux";
 import emptyCart from "assets/pics/images/cart/emptycart.png";
 import BillingContainer from "./billingContainer";
 import Table from "./tableProductContainer";
-
+import {Title} from 'components/commons/titleChange';
 const Cart = () => {
   const cartResult = useSelector((state) => state.cart.addtocart);
   const [cartItem, isEmpty] = useState(cartResult);
   return (
     <>
+      <Title title={'Cart'}/>
       <section id="cart_items">
         <div className="container">
           <div className="breadcrumbs">

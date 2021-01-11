@@ -4,6 +4,7 @@ import emptyCart from "assets/pics/images/cart/emptycart.png";
 import Table from "components/cart/tableProductContainer";
 import ShopperInfo from "components/checkout/shopperInfo";
 import BillingAddressForm from "components/checkout/billingAddressForm";
+import {Title} from 'components/commons/titleChange';
 
 const CheckoutPage = (props) => {
   const cartResult = useSelector((state) => state.cart.addtocart);
@@ -20,6 +21,7 @@ const CheckoutPage = (props) => {
   }
   return (
     <>
+      <Title title={'Checkout'} />
       <section id="cart_items">
         <div className="container">
           <div className="breadcrumbs">

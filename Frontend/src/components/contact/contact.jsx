@@ -1,7 +1,10 @@
 import React from "react";
+import {Title} from 'components/commons/titleChange';
+
 const Contact = () => {
   return (
     <>
+    <Title title={'Contact'} />
       <div id="contact-page" class="container">
         <div class="bg">
           <div class="row">
