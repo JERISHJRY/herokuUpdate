@@ -10,7 +10,7 @@ mongoose.set('useFindAndModify', false);
 
 // Connect to the database
 // construct the database URI and encode username and password.
-const dbURI = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}`;
+const dbURI = process.env.DB_MY_CLUSTER;
 
 const dbOptions = {
   user: encodeURIComponent(process.env.DB_USERNAME),
