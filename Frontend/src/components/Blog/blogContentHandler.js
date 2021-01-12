@@ -8,7 +8,7 @@ export default function BlogContentHandler() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(
-      Server("get", "/product/blog", null, actionType.BLOG)
+      Server("get", `/product/blog`, null, actionType.BLOG)
     );
   }, [dispatch]);
   return <></>;

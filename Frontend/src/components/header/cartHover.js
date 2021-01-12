@@ -22,7 +22,11 @@ const Cart_Hover = ( props ) => {
   }
 
   return (
-    <div className="cartHoverContainer" onMouseEnter={(e)=>props.clear()} onMouseLeave={(e)=>props.hide_item(false)}>
+    <div className="cartHoverContainer">
+        <div className="hoverCartContainer">
+            <div className="hoverCart left">cart</div>
+            <div onClick={()=>props.show_item(false)} className="hoverCloseCart right"><i className="fa fa-times"></i></div>
+        </div>
         <div className="hoverMainProduct">
         {cartItem.length === 0 ? (
             <div className="emptycart">
@@ -34,12 +38,12 @@ const Cart_Hover = ( props ) => {
             <div className="cartHoverImg"> 
                 <img className="fittingImage" src={element.image}/>
             </div>
-            <ul className="cartHoverProductDetails">
-                <li>{element.image_name}</li>{
-                    element.discount ? <li>Price :{element.currency_type} {" "} {offer(element.price,element.discount)}</li>
-                    : <li>Price :{element.currency_type} {" "} {element.price}</li>
+            <div className="cartHoverProductDetails">
+                <a>{element.image_name}</a>{
+                    element.discount ? <p>Price :{element.currency_type} {" "} {offer(element.price,element.discount)}</p>
+                    : <p>Price :{element.currency_type} {" "} {element.price}</p>
                 }  
-            </ul>
+            </div>
             </>
             ))
         } </div>
@@ -47,10 +51,10 @@ const Cart_Hover = ( props ) => {
             <div className="left">
                 { totalAmount != 0 && totalAmount < 500 ?
                     <>
-                    <li className>Delivery charge :$ 50</li>
-                    <li className>Total :${totalAmount + 50}</li>
+                    <p >Delivery charge :$ 50</p>
+                    <p >Total :${totalAmount + 50}</p>
                     </>
-                    : <li className>Total :${totalAmount}</li>
+                    : <p >Total :${totalAmount}</p>
                 }                
             </div>            
             <button className="right hoverCheckoutButton" onClick={()=>{history.push('/cart')}}>Go to cart</button>

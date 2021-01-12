@@ -18,7 +18,7 @@ console.log(process.env,'env');
       dispatch(
         Server(
           "get",
-          ` /product/items`,
+          `/product/items`,
           null,
           actionType.PRODUCT_GET
         )
@@ -31,7 +31,7 @@ console.log(process.env,'env');
         dispatch(
           Server(
             "get",
-            ` /product/priceFilter/:${price}`,
+            `/product/priceFilter/:${price}`,
             null,
             actionType.PRODUCT_GET
           )
@@ -41,7 +41,7 @@ console.log(process.env,'env');
         dispatch(
           Server(
             "get",
-            ` /product/search/:${searchValue}`,
+            `/product/search/:${searchValue}`,
             null,
             actionType.PRODUCT_GET
           )
@@ -50,7 +50,7 @@ console.log(process.env,'env');
         dispatch(
           Server(
             "post",
-            ` /product/filterProduct`,
+            `/product/filterProduct`,
             payload,
             actionType.PRODUCT_GET
           )

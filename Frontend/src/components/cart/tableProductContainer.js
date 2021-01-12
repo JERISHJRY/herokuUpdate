@@ -113,7 +113,7 @@ const TableProductContainer = (props) => {
                   </td>
                   <td className="cart_price">
                     <p>
-                      {cartitem.discount
+                      ${cartitem.discount
                         ? offer(cartitem.price, cartitem.discount)
                         : cartitem.price}
                     </p>

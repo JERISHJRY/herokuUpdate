@@ -10,6 +10,7 @@ const LoginResult = (props) => {
   const takeToLogin = useSelector((state) => state.loginResult.takeToLogin);
 
   const ServerResponse = [];
+  const centerLoader = [];
   console.log(apiResult);
 
   if (takeToLogin) {
@@ -102,10 +103,11 @@ const LoginResult = (props) => {
     }
   } else {
     if (loader) {
-      ServerResponse.push(JSX.Loader);
+      ServerResponse.push(<div className="aln_center_loader">{JSX.Loader}</div>);
     }
   }
 
-  return <div className="loginResult">{ServerResponse}</div>;
+  return <div className="loginResult">{ServerResponse}
+        </div>;
 };
 export default LoginResult;

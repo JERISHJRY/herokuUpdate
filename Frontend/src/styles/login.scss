@@ -134,6 +134,7 @@
 .aln_center{
     margin: auto;
     width: 80%;
+    margin-top: 35vh;
     :link{
         color: blue ;
         &:hover{            
@@ -151,4 +152,7 @@
 }
 .center_aln{
     text-align: center;
+}
+.aln_center_loader{
+    margin-top: 35vh;
 }

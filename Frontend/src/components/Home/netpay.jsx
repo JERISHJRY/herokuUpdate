@@ -79,7 +79,7 @@ const Netpayable = (props) => {
                      <h5>Discounts</h5>
                      <h5>Delivery Charges</h5>
                      <h5>Coupons</h5>
-                     <h5>No: of items</h5>
+                     <h5 className="mt-5">No: of items</h5>
                  </div>
                  <div class="col-sm-3">
                     {sum===undefined?<h5>:$0</h5> : <h5>:${sum}</h5>}
@@ -87,7 +87,7 @@ const Netpayable = (props) => {
                      {discountsum===undefined?<h5>:$0</h5> : <h5>:${discountsum}</h5>}
                      {deliv===0?<h5>:$0</h5> : <h5>:${deliv}</h5>}
                      <input type="text" className="couponText"/>
-                     <h5>:{cartResult.addtocart.length}</h5>
+                     <h5  className="mt-4">:{cartResult.addtocart.length}</h5>
                  </div>
 
              </div>

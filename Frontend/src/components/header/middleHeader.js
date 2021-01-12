@@ -9,20 +9,13 @@ import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 const Middleheader = (props) => {
   const token = localStorage.getItem("userToken");
   const [isHovering, setHoverStatus] = useState(false);
-  let timeOut;
 
-  const hideCartProducts = (val) =>{
+  const setOnclickComponent = (val) =>{
     setHoverStatus(val);
   }
 
-  const setHoverTimeOut =()=>{ 
-    timeOut = setTimeout(()=>{
-      setHoverStatus(false);
-    },2000)
-  }
-
-  const clearHoverTimeOut =()=>{
-    clearTimeout(timeOut);
+  const setHoverStatusOnclick = () =>{
+    setHoverStatus(!isHovering)
   }
 
   const removeToken = () => {
@@ -54,10 +47,10 @@ const Middleheader = (props) => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink onMouseEnter={()=>setHoverStatus(true)} onMouseLeave={()=>setHoverTimeOut()} exact to="/cart">
+                  <Link onClick={()=>setHoverStatusOnclick()} >
                     <i className="fa fa-shopping-cart"></i>
                     <label >{cartResult.addtocart.length}</label> Cart
-                  </NavLink>
+                  </Link>
                 </li>
                 {token ? (
                   <li>
@@ -87,7 +80,7 @@ const Middleheader = (props) => {
         </div>
       </div>
       <div>{
-        isHovering ? <Cart_Hover hide_item={hideCartProducts} clear={clearHoverTimeOut}/>
+        isHovering ? <Cart_Hover show_item={setOnclickComponent} />
         : null
       }      
       </div>

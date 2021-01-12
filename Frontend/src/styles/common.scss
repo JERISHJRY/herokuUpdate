@@ -245,3 +245,10 @@ button:focus {
   width:100%;
   z-index: 1;
 }
+.cart_product{
+  border: none;
+}
+.cart_quantity_up,.cart_quantity_down{
+    padding: 2px 8px;
+    border-radius: 5px;
+}
